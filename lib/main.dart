@@ -94,7 +94,10 @@ class BuboCategoryViewer extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: buboCategories.map((buboCategory) {
-        return BuboCategoryListItem(language, buboCategory);
+        return Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: BuboCategoryListItem(language, buboCategory)
+        );
       }).toList(),
     );
   }
@@ -119,7 +122,28 @@ class BuboCategoryListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(category.translatedLabels[language]!),
+        Stack(
+          children: <Widget>[
+            Image.asset(
+              category.image,
+              fit: BoxFit.cover,
+              width: 400.0,
+            ),
+            Positioned(
+              bottom: 40.0,
+              width: 400.0,
+              child: Text(
+                category.translatedLabels[language]!,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 35.0,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
+        )
       ],
     );
   }

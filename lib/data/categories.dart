@@ -5,24 +5,25 @@ import '../models/bubo_category.dart';
 ///
 
 /// Original labels in german and bulgarian, english added as last value
+/// TODO: add thai labels
 const labels = [
-  ["1", "Obst", "плодове", "vegetables"],
-  ["2", "Farben", "цветове", "colors"],
-  ["3", "Moebel", "мебели", "furniture"],
-  ["4", "Sachen", "дрехи", "clothes"],
-  ["5", "Spielzeug", "играчки", "toys"],
-  ["6", "Tiere", "животни", "animals"],
-  ["7", "Wilde Tiere", "диви животни", "wild animals"],
-  ["8", "Zahlen", "цифри", "digits"],
-  ["9", "Wetter", "времето", "weather"],
-  ["10", "Zu Hause", "вкъщи", "at home"],
-  ["11", "Natur", "природа", "nature"],
-  ["12", "Im Meer", "морето", "sea"],
-  ["13", "Am Strand", "на плажа", "on the beach"],
-  ["14", "Sport", "спорт", "sport"],
-  ["15", "Stadt", "град", "city"],
-  ["16", "Berufe", "професии", "professions"],
-  ["17", "Fahrzeuge", "транспрорт", "transport"]
+  ["1", "Obst", "плодове", "vegetables", "ผลไม้"],
+  ["2", "Farben", "цветове", "colors", "สี"],
+  ["3", "Moebel", "мебели", "furniture", "เฟอร์นิเจอร์"],
+  ["4", "Sachen", "дрехи", "clothes", "เสื้อผ้า"],
+  ["5", "Spielzeug", "играчки", "toys", "ของเล่น"],
+  ["6", "Tiere", "животни", "animals", "สัตว์"],
+  ["7", "Wilde Tiere", "диви животни", "wild animals", "สัตว์ป่า"],
+  ["8", "Zahlen", "цифри", "digits", "ตัวเลข"],
+  ["9", "Wetter", "времето", "weather", "สภาพอากาศ"],
+  ["10", "Zu Hause", "вкъщи", "at home", "บ้าน"],
+  ["11", "Natur", "природа", "nature", "ธรรมชาติ"],
+  ["12", "Im Meer", "морето", "sea", "ทะเล"],
+  ["13", "Am Strand", "на плажа", "on the beach", "บนทะเล"],
+  ["14", "Sport", "спорт", "sport", "กีฬา"],
+  ["15", "Stadt", "град", "city", "เมือง"],
+  ["16", "Berufe", "професии", "professions", "อาชีพ"],
+  ["17", "Fahrzeuge", "транспрорт", "transport", "ขนส่ง"]
 ];
 
 ///
@@ -37,6 +38,7 @@ List<BuboCategory> buboCategories = labels.map((categoryLabels) {
       {
         'us': categoryLabels[3],
         'de': categoryLabels[1],
-        'bg': categoryLabels[2]
+        'bg': categoryLabels[2],
+        'th': categoryLabels[4],
       });
 }).toList();
