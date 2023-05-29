@@ -3,9 +3,13 @@ import 'package:bubolechka2/language_selector.dart';
 import 'package:bubolechka2/models/bubo_category.dart';
 import 'package:flutter/material.dart';
 
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 void main() {
   runApp(const BuboApp());
 }
+int currentIndex = 1;
+
 
 class BuboApp extends StatelessWidget {
   const BuboApp({super.key});
@@ -41,14 +45,11 @@ class _BuboHomePageState extends State<BuboHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey,
       body: Stack(
         children: [
           Container(
             constraints: const BoxConstraints.expand(),
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/main_background.png'),
-                    fit: BoxFit.cover)),
             child: null,
           ),
           Positioned(
@@ -76,7 +77,41 @@ class _BuboHomePageState extends State<BuboHomePage> {
           ),
         ],
       ),
-    );
+      bottomNavigationBar: SizedBox(
+          height: 80,
+          width: 10,
+          child: Container(
+            child: BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
+              backgroundColor: Colors.white,
+              selectedItemColor: Color.fromARGB(255, 27, 120, 196),
+              unselectedItemColor: Colors.blue,
+              selectedFontSize: 17,
+              unselectedFontSize: 15,
+              items: const [
+                BottomNavigationBarItem(
+                  label: 'New post',
+                  icon: Icon(FontAwesomeIcons.plus),
+                ),
+                BottomNavigationBarItem(
+                  label: 'Home',
+                  icon: Icon(FontAwesomeIcons.house),
+                ),
+                BottomNavigationBarItem(
+                  label: 'Profile',
+                  icon: Icon(FontAwesomeIcons.user),
+                ),
+              ],
+              currentIndex: currentIndex,
+              onTap: (int index) {
+                setState(() {
+                  currentIndex = index;
+                });
+              },
+            ),
+          )
+    ),
+  );
   }
 }
 
