@@ -45,11 +45,14 @@ class _BuboHomePageState extends State<BuboHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
       body: Stack(
-        children: [
+        children:[
           Container(
             constraints: const BoxConstraints.expand(),
+            decoration: const BoxDecoration(
+              image:DecorationImage(
+                image: AssetImage('assets/main_background.png'),
+                fit: BoxFit.cover)),
             child: null,
           ),
           Positioned(
