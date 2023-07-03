@@ -1,5 +1,4 @@
 import 'package:bubolechka2/data/categories.dart';
-import 'package:bubolechka2/language_selector.dart';
 import 'package:bubolechka2/models/bubo_category.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +17,7 @@ class BuboApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Bubolechka 2',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -62,16 +62,6 @@ class _BuboHomePageState extends State<BuboHomePage> {
             right: 20,
             child: BuboCategoryViewer(_language),
           ),
-          Positioned(
-              right: 30,
-              bottom: 30,
-              width: 54,
-              height: 300,
-              child: LanguageSelector(onLanguageChange: (newLanguage) {
-                setState(() {
-                  _language = newLanguage.toLowerCase();
-                });
-              })),
           Positioned(
             bottom: 30,
             left: 30,
@@ -167,19 +157,7 @@ class BuboCategoryListItem extends StatelessWidget {
               fit: BoxFit.cover,
               width: 400.0,
             ),
-            Positioned(
-              bottom: 40.0,
-              width: 400.0,
-              child: Text(
-                category.translatedLabels[language]!,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 35.0,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
+            
           ],
         )
       ],
