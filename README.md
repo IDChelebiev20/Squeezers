@@ -1,4 +1,4 @@
-<p align="center"><img height="225" width="225" alt="" src="assets/bubo_logo.png"></p>
+<p align="center"><img height="225" width="325" alt="" src="assets/bubo_logo.png"></p>
 
 # :books:About
 
